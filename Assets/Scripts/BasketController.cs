@@ -41,9 +41,9 @@ public class BasketController : MonoBehaviour
         Vector3 move = new Vector3(moveX, 0, moveZ).normalized;
         transform.position += move * moveSpeed * Time.deltaTime;
 
-        // 화면 밖 이동 방지 예시 (선택)
-        float clampedX = Mathf.Clamp(transform.position.x, -3f, 3f);
-        float clampedZ = Mathf.Clamp(transform.position.z, -3f, 3f);
+        // 스테이지 밖 이동 방지
+        float clampedX = Mathf.Clamp(transform.position.x, -1f, 1f);
+        float clampedZ = Mathf.Clamp(transform.position.z, -1f, 1f);
         transform.position = new Vector3(clampedX, 0, clampedZ);
 
 
