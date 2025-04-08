@@ -6,6 +6,7 @@ TagManager:
   tags:
   - apple
   - bomb
+  - lemon
   layers:
   - Default
   - TransparentFX

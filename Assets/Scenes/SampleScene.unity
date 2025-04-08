@@ -233,8 +233,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   applesound: {fileID: 8300000, guid: 7e1be4e37f867204fbe87a1cc3e2b809, type: 3}
   bombsound: {fileID: 8300000, guid: 5f79c37adc79c974691304e86636b2d7, type: 3}
+  lemonsound: {fileID: 8300000, guid: 7e1be4e37f867204fbe87a1cc3e2b809, type: 3}
   GM: {fileID: 1582832033}
   moveSpeed: 5
+  blindOverlay: {fileID: 1115956885}
 --- !u!54 &221745214
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -977,79 +979,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1115956883}
   m_CullTransparentMesh: 1
---- !u!1001 &1354775624
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.942
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -2571118854743697038, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: a8fb168d44a058f46940583ee3d102f3, type: 2}
-    - target: {fileID: 919132149155446097, guid: 5fa36e9c173983d459969be712078376, type: 3}
-      propertyPath: m_Name
-      value: lemon
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5fa36e9c173983d459969be712078376, type: 3}
 --- !u!1 &1582832033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appleGO: {fileID: 7801064481858941273, guid: 808aaacd9d158c1409256d31ca21f791, type: 3}
   bombGO: {fileID: 800747772785329064, guid: 6eaf61a3738528f41acfc07e05dbbd46, type: 3}
+  lemonGO: {fileID: 1563486874697566450, guid: 19ccf82f759b83944bd732598e9c424f, type: 3}
   timerText: {fileID: 883809277}
   scoreText: {fileID: 1967478345}
 --- !u!1 &1967478345
@@ -1410,4 +1340,3 @@ SceneRoots:
   - {fileID: 1582832034}
   - {fileID: 726493157}
   - {fileID: 2139595148}
-  - {fileID: 1354775624}

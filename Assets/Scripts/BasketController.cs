@@ -1,13 +1,18 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class BasketController : MonoBehaviour
 {
     public AudioClip applesound;
     public AudioClip bombsound;
+    public AudioClip lemonsound;
     AudioSource AS;
     public GameObject GM;
     ItemGenerator IG;
     public float moveSpeed = 5f; // 이동 속도
+
+    public Image blindOverlay;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -72,11 +77,32 @@ public class BasketController : MonoBehaviour
             AS.PlayOneShot(applesound);
             IG.GetApple();
         }
-        if (other.CompareTag("bomb")){
+        else if (other.CompareTag("bomb")){
             Debug.Log("bomb");
             AS.PlayOneShot(bombsound);
             IG.GetBomb();
         }
+        else if (other.CompareTag("lemon"))
+        {
+            Debug.Log("레몬! 보너스 점수!");
+            AS.PlayOneShot(lemonsound);
+            IG.GetLemon();
+            StartCoroutine(BlindEffect());
+        }
+
         Destroy(other.gameObject);
     }
+    // 시야 가리기 효과를 일시적으로 보여줌
+    IEnumerator BlindEffect()
+    {
+        // 화면 전체에 노란 오버레이를 켠다 (시야가 가려짐)
+        blindOverlay.enabled = true;
+        // 3초 동안 오버레이 유지 (3초 기다림)
+        yield return new WaitForSeconds(3f);
+        // 3초 후 오버레이를 끄기
+        blindOverlay.enabled = false;
+    }
+
+
+
 }
