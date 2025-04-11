@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class BasketController : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class BasketController : MonoBehaviour
     public float moveSpeed = 5f; // 이동 속도
 
     public Image blindOverlay;
+    public TextMeshProUGUI bonusText;
+
+    public Image warningOverlay; // 빨간 배경 오버레이
+    public TextMeshProUGUI warningText; // "경고!" 텍스트
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +26,11 @@ public class BasketController : MonoBehaviour
         transform.position = Vector3.zero;
         AS = GetComponent<AudioSource>();
         IG = GM.GetComponent<ItemGenerator>();
+        blindOverlay.enabled = false;
+        bonusText.enabled = false;
 
+        warningOverlay.enabled = false;
+        warningText.enabled = false;
     }
 
     // Update is called once per frame
@@ -81,10 +90,11 @@ public class BasketController : MonoBehaviour
             Debug.Log("bomb");
             AS.PlayOneShot(bombsound);
             IG.GetBomb();
+            StartCoroutine(WarningEffect());
         }
         else if (other.CompareTag("lemon"))
         {
-            Debug.Log("레몬! 보너스 점수!");
+            Debug.Log("레몬!");
             AS.PlayOneShot(lemonsound);
             IG.GetLemon();
             StartCoroutine(BlindEffect());
@@ -97,12 +107,23 @@ public class BasketController : MonoBehaviour
     {
         // 화면 전체에 노란 오버레이를 켠다 (시야가 가려짐)
         blindOverlay.enabled = true;
+        bonusText.enabled = true;
         // 3초 동안 오버레이 유지 (3초 기다림)
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         // 3초 후 오버레이를 끄기
         blindOverlay.enabled = false;
+        bonusText.enabled = false;
     }
 
+    IEnumerator WarningEffect()
+    {
+        warningOverlay.enabled = true;
+        warningText.enabled = true;
 
+        yield return new WaitForSeconds(1f);
+
+        warningOverlay.enabled = false;
+        warningText.enabled = false;
+    }
 
 }

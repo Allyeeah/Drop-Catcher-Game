@@ -63,7 +63,7 @@ public class ItemGenerator : MonoBehaviour
     }
     public void GetApple()
     {
-        score += 100;
+        score += 50;
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score : " + score;
     }
 
@@ -74,7 +74,7 @@ public class ItemGenerator : MonoBehaviour
 
    public void GetLemon()
     {
-        score += 50;
+        score += 100;
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score : " + score;
     }
 
