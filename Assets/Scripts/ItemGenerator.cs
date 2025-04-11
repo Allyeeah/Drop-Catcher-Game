@@ -39,14 +39,14 @@ public class ItemGenerator : MonoBehaviour
             //span초마다 수행하고 싶은 내용
             delta = 0;
             GameObject item;
-            int dice = Random.Range(1, 21); //1~10까지의 랜덤한 int 수 반환
+            int dice = Random.Range(1, 21); //1~21까지의 랜덤한 int 수 반환
             if (dice <= ratio) item = Instantiate(bombGO);
             else if (dice <= 16)
                 item = Instantiate(appleGO);
             else
                 item = Instantiate(lemonGO);
 
-            //-1 ~ 1 사이의 랜덤한 int 값
+            //-1 ~ 2 사이의 랜덤한 int 값
             float x = Random.Range(-1, 2);
             float z = Random.Range(-1, 2);
             item.transform.position = new Vector3(x, 4, z);
@@ -74,7 +74,7 @@ public class ItemGenerator : MonoBehaviour
 
    public void GetLemon()
     {
-        score += 100;
+        score += 200;
         scoreText.GetComponent<TextMeshProUGUI>().text = "Score : " + score;
     }
 
